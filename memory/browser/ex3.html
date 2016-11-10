@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>a</title>
+</head>
+
+<body>
+    <h3>a function scope is leaking</h3>
+    <button class="run">run</button>
+    <button class="clean">clean</button>
+    <div id="wrapper"></div>
+
+    
+    <script src="ex4.js"></script>
+
+    <script>
+        document.querySelector('.run').onclick = window.module.run;
+        document.querySelector('.clean').onclick = window.module.clean;
+    </script>
+</body>
+
+</html>

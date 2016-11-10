@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+
+<body>
+    <h3>Last element created in the loop is referenced so everything stays</h3>
+    <p>This is what people call "detached DOM trees". When a reference to anything sticks around, DOMNode object holds a reference to parentNode, so the entire tree is still referenced. </p>
+    <button class="run">run</button>
+    <button class="clean">clean</button>
+    <button class="realClean">clean for real</button>
+    <div id="wrapper"></div>
+
+
+    <script src="ex2.js"></script>
+
+    <script>
+        document.querySelector('.run').onclick = window.module.run;
+        document.querySelector('.clean').onclick = window.module.clean;
+        document.querySelector('.realClean').onclick = window.module.realClean;
+    </script>
+</body>
+
+</html>
