@@ -8,9 +8,10 @@
 
 <body>
     <h3>Last element created in the loop is referenced so everything stays</h3>
-    <p>This is what people call "detached DOM trees". When a reference to anything sticks around, DOMNode object holds a reference to parentNode, so the entire tree is still referenced. </p>
+    <p>This is what people call "detached DOM trees". When a reference to anything sticks around, DOMNode object holds a reference to parentNode, so the entire tree is still referenced. You don't need an array of references like in ex1 to create a massive leak.</p>
     <button class="run">run</button>
-    <button class="clean">clean</button>
+    <p>choose one:</p>
+    <button class="clean">clean (unsuccessful)</button>
     <button class="realClean">clean for real</button>
     <div id="wrapper"></div>
 

@@ -5,7 +5,7 @@ var module = (function () {
 
     return {
         run: function () {
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 1000; i++) {
                 var d = document.createElement('div');
                 d.textContent = i;
 
@@ -26,7 +26,9 @@ var module = (function () {
         },
         realClean: function () {
             var wrapper = document.querySelector('#wrapper');
-            wrapper.parentNode.removeChild(wrapper); //empty
+            if (wrapper) {
+              wrapper.parentNode.removeChild(wrapper); //empty
+            }
             last=null;
         }
     }

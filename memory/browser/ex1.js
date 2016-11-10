@@ -7,7 +7,7 @@ var module = (function () {
 
     return {
         run: function () {
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 1090; i++) {
                 var d = document.createElement('div');
                 d.textContent = i;
                 collection.push(d);

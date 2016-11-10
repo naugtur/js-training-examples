@@ -3,11 +3,9 @@ var module = (function () {
     var last = document.querySelector('#wrapper');
 
 
-    var someFunction;
-
     return {
         run: function () {
-            for (var i = 0; i < 100; i++) {
+            for (var i = 0; i < 1000; i++) {
                 var d = document.createElement('div');
                 d.textContent = i;
 
@@ -17,11 +15,11 @@ var module = (function () {
 
             d = document.createElement('span');
             d.textContent = 'last in tree';
-
-            someFunction = function () {
+                                                // name your functions to make leak searching easier
+            window.addEventListener('unload', function someFunction() {
                 console.log(i, d);
                 //Note: browsers remove references from function context if they are not used inside the function. But you shouldn't bet on that...
-            }
+            })
 
             last.appendChild(d);
             last = d;

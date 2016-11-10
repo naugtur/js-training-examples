@@ -7,13 +7,14 @@
 </head>
 
 <body>
-    <h3>a function scope is leaking</h3>
+    <h3>A function scope is leaking</h3>
+    <p>Function is retained and with it - the scope of the parent function</p>
     <button class="run">run</button>
     <button class="clean">clean</button>
     <div id="wrapper"></div>
 
-    
-    <script src="ex4.js"></script>
+
+    <script src="ex3.js"></script>
 
     <script>
         document.querySelector('.run').onclick = window.module.run;
