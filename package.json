@@ -1,0 +1,16 @@
+{
+  "name": "js-training-examples",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "http-server -c-1 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naugtur/js-training-examples.git"
+  },
+  "author": "naugtur",
+  "license": "CC-BY-NC",
+  "dependencies": {
+    "http-server": "^0.12.0"
+  }
+}

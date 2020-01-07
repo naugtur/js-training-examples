@@ -1,4 +1,4 @@
-# Read me if you gave up tryoing to find the leak in the browser
+# Read me if you gave up trying to find the leak in the browser
 
 
 ## Ok, you really decided you need this :)
