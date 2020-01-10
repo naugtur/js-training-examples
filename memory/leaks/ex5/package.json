@@ -2,19 +2,17 @@
   "name": "ex5",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack -w"
+    "start": "parcel index.html"
   },
   "author": "naugtur",
   "license": "WTFPL",
   "dependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
-    "babel-loader": "^6.2.7",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "webpack": "^1.13.3"
+    "@babel/core": "^7.7.7",
+    "babel-preset-env": "^1.7.0",
+    "parcel": "^1.12.4"
   }
 }

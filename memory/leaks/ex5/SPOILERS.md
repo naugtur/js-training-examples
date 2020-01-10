@@ -3,17 +3,14 @@
 
 ## Ok, you really decided you need this :)
 
-BTW. this works in a generation of devtools available now - Fall of 2016 (Chromium 53), might change in the future...
+# Try continuing on your own after each clue!
 
-# Try continuing on your own after every clue!
 
 ### 1.
-- Go to profiles and start recording allocation timelines.
-Click refresh a few times. Select a single spike of leftovers that didn't get collected.
-
+- Go to "Memory" tab and start recording allocation timeline.
+- Click refresh a few times. Select a single spike of leftovers that didn't get collected.
 - Look at the items with highest "retained size"
-
-
+There's going to be an excess of information there. That's normal.
 
 ### 2.
 - Open "Objects" on the list and open first reference.
@@ -25,7 +22,6 @@ Click refresh a few times. Select a single spike of leftovers that didn't get co
 
 ### 3.
 - See how it says it's in an array inside of a bound argument of some function? That's the drawback of using functions without names.
-- Hover over the function to see how it was defined.
 - Congrats, you found the variable name that's a suspect!
 - Now try exploring to see how it got retained
 

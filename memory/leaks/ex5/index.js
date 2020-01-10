@@ -1,4 +1,4 @@
-import React, {PropTypes} from "react"
+import React from "react"
 import ReactDOM from "react-dom"
 
 const SomeComponent = ((catchMeIfYouCan) => {
@@ -17,12 +17,12 @@ const SomeComponent = ((catchMeIfYouCan) => {
     )).bind(null, catchMeIfYouCan)
 })([])
 
-SomeComponent.propTypes = {
-    items: PropTypes.array.isRequired
+function generate(){
+return Array(999).join(',').split(',').map(() => ({field: Math.random().toFixed(8)}))
 }
 
 function drawEverything() {
-    const items = Array(999).join(',').split(',').map(() => ({field: Math.random().toFixed(8)}))
+    const items = generate()
     ReactDOM.render(
         <div className="app">
         <button onClick={drawEverything}>refresh</button>
