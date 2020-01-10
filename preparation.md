@@ -10,5 +10,5 @@ mkdir js-training-sandbox
 cd js-training-sandbox
 git clone https://github.com/naugtur/js-training-examples
 cd js-training-examples
-npm install
+npm ci
 ```
