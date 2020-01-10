@@ -1,2 +1,12 @@
-# Maintainable JS
-The last framework-independent advanced JS training.
+# JS training examples
+
+
+## Prepare
+
+[Setup instructions](preparation.md)
+
+## Run
+```
+npm start
+```
+

@@ -2,7 +2,8 @@
   "name": "js-training-examples",
   "version": "1.0.0",
   "scripts": {
-    "start": "http-server -c-1 ."
+    "start": "http-server -c-1 .",
+    "ex5": "parcel memory/leaks/ex5/index.html"
   },
   "repository": {
     "type": "git",
@@ -11,6 +12,13 @@
   "author": "naugtur",
   "license": "CC-BY-NC",
   "dependencies": {
-    "http-server": "^0.12.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.0",
+    "@babel/core": "^7.7.7",
+    "babel-preset-env": "^1.7.0",
+    "parcel": "^1.12.4"
   }
 }
