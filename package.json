@@ -2,6 +2,7 @@
   "name": "js-training-examples",
   "version": "1.0.0",
   "scripts": {
+    "ex6": "node --inspect memory/leaks/ex6/app.js",
     "start": "http-server -c-1 .",
     "ex5": "parcel memory/leaks/ex5/index.html"
   },
@@ -12,6 +13,7 @@
   "author": "naugtur",
   "license": "CC-BY-NC",
   "dependencies": {
+    "fastify": "^2.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
