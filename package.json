@@ -13,7 +13,7 @@
   "author": "naugtur",
   "license": "CC-BY-NC",
   "dependencies": {
-    "fastify": "^2.14.1",
+    "fastify": "^2.15.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
