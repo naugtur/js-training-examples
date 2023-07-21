@@ -3,10 +3,5 @@
 
 ## Prepare
 
-[Setup instructions](preparation.md)
-
-## Run
-```
-npm start
-```
+Pick the training you're going for and follow the `preparation.md` in its respective folder.
 

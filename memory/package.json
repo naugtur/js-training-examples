@@ -2,9 +2,9 @@
   "name": "js-training-examples",
   "version": "1.0.0",
   "scripts": {
-    "ex6": "node --inspect memory/leaks/ex6/app.js",
+    "ex6": "node --inspect leaks/ex6/app.js",
     "start": "http-server -c-1 .",
-    "ex5": "parcel memory/leaks/ex5/index.html"
+    "ex5": "parcel leaks/ex5/index.html"
   },
   "repository": {
     "type": "git",

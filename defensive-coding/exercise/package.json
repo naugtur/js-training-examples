@@ -1,0 +1,7 @@
+{
+    "main": "authz.js",
+    "scripts": {
+        "test": "node .testrunner.js"
+    },
+    "type": "module"
+}

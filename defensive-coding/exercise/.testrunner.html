@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: Verdana, sans-serif;
+        font-size: 20pt;
+      }
+      input,
+      button {
+        width: 3em;
+        padding: 0.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Open devtools console, select an attack to run</h1>
+
+    <input type="number" name="attack" id="attack" />
+    <button id="attackBtn">run</button>
+
+    <br />
+    <br />
+    <br />
+    <p>tips 😃</p>
+    <ul>
+        <li>Set your browser console to persist logs across reloads</li>
+        <li>Remember to refresh the page after you've edited authz.js</li>
+    </ul>
+    <script>
+      (async function () {
+        const { random } = Math;
+        const { log, warn, error } = console;
+        const { stringify } = JSON;
+        const later = setTimeout;
+
+        const secret1 = "secret" + random().toFixed(6).substring(2);
+        const secret2 = "secret" + random().toFixed(6).substring(2);
+        const check1 = RegExp.prototype.test.bind(RegExp(secret1));
+        const check2 = RegExp.prototype.test.bind(RegExp(secret2));
+
+        const { makeAuthzManager } = await import("./authz.js");
+        $ = document.querySelector.bind(document);
+
+        const attackBtn = $("#attackBtn");
+        const attackInput = $("#attack");
+        attackInput.value = localStorage.getItem("attack") || "0";
+
+        attackBtn.addEventListener("click", async () => {
+          const attackNumber = attackInput.value;
+          attackInput.setAttribute("disabled", true);
+          localStorage.setItem("attack", attackNumber);
+          log(`Testrun started. Running attack${attackNumber}.js`);
+          try {
+            attacker = await import(`./attacks/attack${attackNumber}.js`);
+          } catch (e) {
+            error(
+              `Failed to run 'attack${attackNumber}.js' - are you sure it exists in the ./attacks/ folder? Is it valid JavaScript?
+          Error details:
+          ${e.message}`
+            );
+          }
+
+          const au = makeAuthzManager();
+
+          au.setSecrets([secret1, secret2]);
+          let success = false;
+          later(() => {
+            if (!success) {
+              log("🎉 Attack was not triggered!");
+            }
+            warn("Testrun ended, refreshing the window to clean up hacks.");
+            location.reload();
+          }, 2000);
+          attacker.attack(au, (stolenGoods) => {
+            success = true;
+            log("💣 Attack triggered!");
+            const payload = stringify(stolenGoods);
+            if (check1(payload) || check2(payload)) {
+              log("🤯 Secrets leaked!");
+            } else {
+              log(
+                "Failed to detect leaked secrets, but the attack is still not prevented"
+              );
+            }
+            log("\nHere's what the attack captured:\n", stolenGoods);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
