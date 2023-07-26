@@ -6,7 +6,7 @@ Imagine you've inherited a codebase written in JavaScript.
 
 *We don't want to scare you, so this is not going to be an actual awful pile of legacy code. Just a small module that's not entirely realistic, but easier to grasp than a real project would be.*
 
-See `exampleUsage.js` for a snippet showing how this module can be used.
+See `usageExample.js` for a snippet showing how this module can be used.
 
 Now imagine your module is running alongside some dependencies tha the rest of the app is pulling in. What if they're malicious? 👿
 
