@@ -28,7 +28,6 @@
     <p>tips 😃</p>
     <ul>
         <li>Set your browser console to persist logs across reloads</li>
-        <li>Remember to refresh the page after you've edited authz.js</li>
     </ul>
     <script>
       (async function () {
@@ -42,7 +41,6 @@
         const check1 = RegExp.prototype.test.bind(RegExp(secret1));
         const check2 = RegExp.prototype.test.bind(RegExp(secret2));
 
-        const { makeAuthzManager } = await import("./authz.js");
         $ = document.querySelector.bind(document);
 
         const attackBtn = $("#attackBtn");
@@ -50,6 +48,7 @@
         attackInput.value = localStorage.getItem("attack") || "0";
 
         attackBtn.addEventListener("click", async () => {
+          const { makeAuthzManager } = await import("./authz.js");
           const attackNumber = attackInput.value;
           attackInput.setAttribute("disabled", true);
           localStorage.setItem("attack", attackNumber);
