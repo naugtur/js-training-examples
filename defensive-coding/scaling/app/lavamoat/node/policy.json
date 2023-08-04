@@ -1,5 +1,77 @@
 {
   "resources": {
+    "@fastify/caching": {
+      "packages": {
+        "@fastify/caching>abstract-cache": true,
+        "@fastify/caching>fastify-plugin": true,
+        "@fastify/caching>uid-safe": true
+      }
+    },
+    "@fastify/caching>abstract-cache": {
+      "packages": {
+        "@fastify/caching>abstract-cache>clone": true,
+        "@fastify/caching>abstract-cache>lru_map": true,
+        "@fastify/caching>abstract-cache>merge-options": true
+      }
+    },
+    "@fastify/caching>abstract-cache>clone": {
+      "globals": {
+        "Buffer": true
+      }
+    },
+    "@fastify/caching>abstract-cache>lru_map": {
+      "globals": {
+        "define": true
+      }
+    },
+    "@fastify/caching>abstract-cache>merge-options": {
+      "packages": {
+        "@fastify/caching>abstract-cache>merge-options>is-plain-obj": true
+      }
+    },
+    "@fastify/caching>uid-safe": {
+      "packages": {
+        "@fastify/caching>uid-safe>random-bytes": true
+      }
+    },
+    "@fastify/caching>uid-safe>random-bytes": {
+      "builtin": {
+        "crypto.pseudoRandomBytes": true,
+        "crypto.randomBytes": true
+      },
+      "globals": {
+        "setTimeout": true
+      }
+    },
+    "evil_sample": {
+      "globals": {
+        "Buffer.from": true
+      },
+      "packages": {
+        "evil_sample>entropoetry": true
+      }
+    },
+    "evil_sample>entropoetry": {
+      "builtin": {
+        "assert": true,
+        "buffer.Buffer": true,
+        "zlib": true
+      },
+      "globals": {
+        "console": true
+      },
+      "packages": {
+        "evil_sample>entropoetry>bn.js": true
+      }
+    },
+    "evil_sample>entropoetry>bn.js": {
+      "builtin": {
+        "buffer.Buffer": true
+      },
+      "globals": {
+        "Buffer": true
+      }
+    },
     "fastify": {
       "builtin": {
         "assert": true,
