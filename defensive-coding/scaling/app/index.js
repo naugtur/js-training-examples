@@ -2,9 +2,23 @@ const fastify = require("fastify")({
   logger: true,
 });
 const semver = require("semver");
+/**
+ * @type {import('fastify').RouteShorthandOptions}
+ * @const
+ */
+const opts = {
+  schema: {
+    query: {
+      type: 'object',
+      required: ['v'],
+      properties: {
+        v: { type: 'string' },
+      }
+    }
+  }
+}
 
-// Declare a route
-fastify.get("/", function (request, reply) {
+fastify.get('/', opts, async (request, reply) => {
   reply.send({ valid: semver.valid(request.query.v) });
 });
 
