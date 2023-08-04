@@ -1,0 +1,346 @@
+{
+  "resources": {
+    "fastify": {
+      "builtin": {
+        "assert": true,
+        "async_hooks.AsyncResource": true,
+        "diagnostics_channel.channel": true,
+        "dns.lookup": true,
+        "http.STATUS_CODES": true,
+        "http.createServer": true,
+        "http2": true,
+        "https.createServer": true,
+        "stream.finished": true
+      },
+      "globals": {
+        "Buffer.byteLength": true,
+        "Buffer.concat": true,
+        "Buffer.from": true,
+        "Buffer.isBuffer": true,
+        "process.hrtime": true,
+        "process.nextTick": true,
+        "process.versions.node": true
+      },
+      "packages": {
+        "fastify>@fastify/ajv-compiler": true,
+        "fastify>@fastify/error": true,
+        "fastify>@fastify/fast-json-stringify-compiler": true,
+        "fastify>abstract-logging": true,
+        "fastify>avvio": true,
+        "fastify>fast-content-type-parse": true,
+        "fastify>fast-json-stringify": true,
+        "fastify>find-my-way": true,
+        "fastify>light-my-request": true,
+        "fastify>pino": true,
+        "fastify>process-warning": true,
+        "fastify>proxy-addr": true,
+        "fastify>rfdc": true,
+        "fastify>secure-json-parse": true,
+        "fastify>tiny-lru": true,
+        "semver": true
+      }
+    },
+    "fastify>@fastify/ajv-compiler": {
+      "packages": {
+        "fastify>fast-json-stringify>ajv": true,
+        "fastify>fast-json-stringify>ajv-formats": true,
+        "fastify>fast-json-stringify>fast-uri": true
+      }
+    },
+    "fastify>@fastify/error": {
+      "builtin": {
+        "util.format": true
+      },
+      "globals": {
+        "new": true,
+        "target": true
+      }
+    },
+    "fastify>@fastify/fast-json-stringify-compiler": {
+      "packages": {
+        "fastify>fast-json-stringify": true
+      }
+    },
+    "fastify>avvio": {
+      "builtin": {
+        "events.EventEmitter": true,
+        "util.format": true,
+        "util.inherits": true
+      },
+      "globals": {
+        "clearTimeout": true,
+        "new": true,
+        "process.nextTick": true,
+        "queueMicrotask": true,
+        "setTimeout": true,
+        "target": true
+      },
+      "packages": {
+        "fastify>avvio>archy": true,
+        "fastify>avvio>debug": true,
+        "fastify>avvio>fastq": true
+      }
+    },
+    "fastify>avvio>debug": {
+      "builtin": {
+        "tty.isatty": true,
+        "util.deprecate": true,
+        "util.format": true,
+        "util.inspect": true
+      },
+      "globals": {
+        "console": true,
+        "document": false,
+        "localStorage": false,
+        "navigator": false,
+        "process": false
+      },
+      "packages": {
+        "fastify>avvio>debug>ms": true,
+        "lavamoat>@babel/highlight>chalk>supports-color": true
+      }
+    },
+    "fastify>avvio>fastq": {
+      "packages": {
+        "fastify>avvio>fastq>reusify": true
+      }
+    },
+    "fastify>fast-json-stringify": {
+      "builtin": {
+        "crypto.randomUUID": true
+      },
+      "packages": {
+        "fastify>fast-json-stringify>@fastify/deepmerge": true,
+        "fastify>fast-json-stringify>ajv": true,
+        "fastify>fast-json-stringify>ajv-formats": true,
+        "fastify>fast-json-stringify>fast-uri": true,
+        "fastify>find-my-way>fast-deep-equal": true,
+        "fastify>rfdc": true
+      }
+    },
+    "fastify>fast-json-stringify>@fastify/deepmerge": {
+      "globals": {
+        "Buffer": true
+      }
+    },
+    "fastify>fast-json-stringify>ajv": {
+      "globals": {
+        "console": true
+      },
+      "packages": {
+        "fastify>fast-json-stringify>ajv>json-schema-traverse": true,
+        "fastify>fast-json-stringify>ajv>uri-js": true,
+        "fastify>find-my-way>fast-deep-equal": true
+      }
+    },
+    "fastify>fast-json-stringify>ajv-formats": {
+      "packages": {
+        "fastify>fast-json-stringify>ajv": true
+      }
+    },
+    "fastify>fast-json-stringify>ajv>uri-js": {
+      "globals": {
+        "define": true
+      }
+    },
+    "fastify>fast-json-stringify>fast-uri": {
+      "builtin": {
+        "url.domainToASCII": true
+      }
+    },
+    "fastify>find-my-way": {
+      "builtin": {
+        "assert": true
+      },
+      "packages": {
+        "fastify>find-my-way>fast-deep-equal": true,
+        "fastify>find-my-way>fast-querystring": true,
+        "fastify>find-my-way>safe-regex2": true
+      }
+    },
+    "fastify>find-my-way>fast-querystring": {
+      "packages": {
+        "fastify>find-my-way>fast-querystring>fast-decode-uri-component": true
+      }
+    },
+    "fastify>find-my-way>safe-regex2": {
+      "packages": {
+        "fastify>find-my-way>safe-regex2>ret": true
+      }
+    },
+    "fastify>light-my-request": {
+      "builtin": {
+        "assert": true,
+        "events.EventEmitter": true,
+        "http.ServerResponse": true,
+        "stream.Readable": true,
+        "stream.Writable": true,
+        "stream.addAbortSignal": true,
+        "url.URL": true,
+        "util.inherits": true
+      },
+      "globals": {
+        "Buffer.byteLength": true,
+        "Buffer.concat": true,
+        "Buffer.from": true,
+        "Buffer.isBuffer": true,
+        "URLSearchParams": true,
+        "clearTimeout": true,
+        "process.nextTick": true,
+        "setImmediate": true,
+        "setTimeout": true
+      },
+      "packages": {
+        "fastify>light-my-request>cookie": true,
+        "fastify>light-my-request>set-cookie-parser": true,
+        "fastify>process-warning": true
+      }
+    },
+    "fastify>light-my-request>set-cookie-parser": {
+      "globals": {
+        "console.error": true,
+        "console.warn": true
+      }
+    },
+    "fastify>pino": {
+      "builtin": {
+        "events.EventEmitter.prototype": true,
+        "module.createRequire": true,
+        "os.hostname": true,
+        "path.isAbsolute": true,
+        "path.join": true,
+        "path.sep": true,
+        "worker_threads.isMainThread": true
+      },
+      "globals": {
+        "__bundlerPathsOverrides": true,
+        "__dirname": true,
+        "process.cwd": true,
+        "process.on": true,
+        "process.pid": true,
+        "process.removeListener": true,
+        "process.stdout": true
+      },
+      "packages": {
+        "fastify>pino>atomic-sleep": true,
+        "fastify>pino>fast-redact": true,
+        "fastify>pino>on-exit-leak-free": true,
+        "fastify>pino>pino-std-serializers": true,
+        "fastify>pino>quick-format-unescaped": true,
+        "fastify>pino>safe-stable-stringify": true,
+        "fastify>pino>sonic-boom": true,
+        "fastify>pino>thread-stream": true
+      }
+    },
+    "fastify>pino>on-exit-leak-free": {
+      "globals": {
+        "FinalizationRegistry": true,
+        "WeakRef": true,
+        "process.on": true,
+        "process.removeListener": true
+      }
+    },
+    "fastify>pino>sonic-boom": {
+      "builtin": {
+        "events": true,
+        "fs.close": true,
+        "fs.fsyncSync": true,
+        "fs.mkdir": true,
+        "fs.mkdirSync": true,
+        "fs.open": true,
+        "fs.openSync": true,
+        "fs.write": true,
+        "fs.writeSync": true,
+        "path.dirname": true,
+        "util.inherits": true
+      },
+      "globals": {
+        "process.nextTick": true,
+        "setImmediate": true,
+        "setTimeout": true
+      },
+      "packages": {
+        "fastify>pino>atomic-sleep": true
+      }
+    },
+    "fastify>pino>thread-stream": {
+      "builtin": {
+        "assert": true,
+        "buffer.constants.MAX_STRING_LENGTH": true,
+        "events.EventEmitter": true,
+        "path.join": true,
+        "url.pathToFileURL": true,
+        "worker_threads.Worker": true
+      },
+      "globals": {
+        "Buffer.byteLength": true,
+        "Buffer.from": true,
+        "FinalizationRegistry": true,
+        "WeakRef": true,
+        "__bundlerPathsOverrides": true,
+        "__dirname": true,
+        "process.nextTick": true,
+        "setImmediate": true,
+        "setTimeout": true
+      }
+    },
+    "fastify>process-warning": {
+      "builtin": {
+        "util.format": true
+      },
+      "globals": {
+        "process.emitWarning": true
+      }
+    },
+    "fastify>proxy-addr": {
+      "packages": {
+        "fastify>proxy-addr>forwarded": true,
+        "fastify>proxy-addr>ipaddr.js": true
+      }
+    },
+    "fastify>rfdc": {
+      "globals": {
+        "Buffer": true
+      }
+    },
+    "fastify>secure-json-parse": {
+      "globals": {
+        "Buffer": true
+      }
+    },
+    "lavamoat>@babel/highlight>chalk>supports-color": {
+      "builtin": {
+        "os.release": true
+      },
+      "globals": {
+        "process.env": true,
+        "process.platform": true,
+        "process.stderr": true,
+        "process.stdout": true,
+        "process.versions.node.split": true
+      },
+      "packages": {
+        "lavamoat>@babel/highlight>chalk>supports-color>has-flag": true
+      }
+    },
+    "lavamoat>@babel/highlight>chalk>supports-color>has-flag": {
+      "globals": {
+        "process.argv": true
+      }
+    },
+    "semver": {
+      "globals": {
+        "console.error": true,
+        "process": false
+      },
+      "packages": {
+        "semver>lru-cache": true
+      }
+    },
+    "semver>lru-cache": {
+      "packages": {
+        "semver>lru-cache>yallist": true
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+diff --git a/node_modules/tiny-lru/package.json b/node_modules/tiny-lru/package.json
+index 551b434..1829edd 100644
+--- a/node_modules/tiny-lru/package.json
++++ b/node_modules/tiny-lru/package.json
+@@ -17,7 +17,7 @@
+   ],
+   "license": "BSD-3-Clause",
+   "source": "src/lru.js",
+-  "main": "dist/tiny-lru",
++  "main": "dist/tiny-lru.cjs",
+   "exports": {
+     "types": "./lru.d.ts",
+     "import": "./dist/tiny-lru.js",

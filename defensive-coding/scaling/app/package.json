@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lavamoat index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "patch-package",
+    "generate": "lavamoat --autopolicy index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.21.0",
+    "semver": "^7.5.4"
+  },
+  "devDependencies": {
+    "lavamoat": "^7.1.0",
+    "patch-package": "^8.0.0"
+  }
+}

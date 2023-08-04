@@ -1,0 +1,19 @@
+{
+  "resources": {
+    "semver": {
+      "globals": {
+        "console.error": true,
+        "process": false
+      }
+    },
+    "fastify>avvio>debug": {
+      "globals": {
+        "console": true,
+        "document": false,
+        "localStorage": false,
+        "navigator": false,
+        "process": false
+      }
+    }
+  }
+}
