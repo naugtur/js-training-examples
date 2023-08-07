@@ -9,3 +9,5 @@
     (Chromium based browsers or Firefox have been tested to work with this.)
   - Follow the instructions in the exercise to set up.
 - test out running the first attack from the exercise to make sure it works
+
+The second part of the training was designed and tested in `bash` so while there's nothing that we wxpect to break under Windows, if you're runing Windows, WSL or a linux VM would be preferred.
