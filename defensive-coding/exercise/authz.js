@@ -1,6 +1,7 @@
 // @ts-check
 
 const { create } = Object;
+const { includes, reduce } = Array.prototype;
 
 export const makeAuthzManager = () => {
   const internals = create(null);
@@ -25,7 +26,7 @@ export const makeAuthzManager = () => {
         throw new Error("Limit exceeded");
       }
       internals.guessLimit--;
-      if (!internals.secrets.includes(guess)) {
+      if (!includes.call(internals.secrets, guess)) {
         throw new Error("Unauthorized");
       }
     },
@@ -38,7 +39,7 @@ export const makeAuthzManager = () => {
      * @param {Array<{ url:string, headers:Record<string, string>, method:string}>} requests
      */
     authorizedFetch: (requests) => {
-      const authorizedRequests = Array.prototype.reduce.call(
+      const authorizedRequests = reduce.call(
         requests,
         (acc, request, index) => {
           const { url, headers, method } = request;
