@@ -1,5 +1,5 @@
 // @ts-check
-import { makeAuthzManager } from "./authz";
+import { makeAuthzManager } from "./authz.js";
 
 const au = makeAuthzManager();
 
