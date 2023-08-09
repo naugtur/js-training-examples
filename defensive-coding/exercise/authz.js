@@ -40,9 +40,12 @@ export const makeAuthzManager = () => {
         requests,
         (acc, request, index) => {
           const { url, headers, method } = request;
-          headers.Authorization = "Bearer " + internals.secrets[index];
+          const completeHeaders = {
+            Authorization: "Bearer " + internals.secrets[index],
+            ...headers,
+          };
           acc[url] = {
-            headers,
+            headers: completeHeaders,
             method,
           };
           return acc;
