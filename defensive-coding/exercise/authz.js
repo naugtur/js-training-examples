@@ -1,12 +1,14 @@
 // @ts-check
 
-const { create } = Object;
+const { create, freeze } = Object;
+freeze(Object.prototype);
 const { includes, reduce } = Array.prototype;
 const { bind, call } = Function.prototype;
 const uncurryThis = bind.bind(bind.call)
 
 const arrayIncludes = uncurryThis(includes);
 const arrayReduce = uncurryThis(reduce);
+
 
 export const makeAuthzManager = () => {
   const internals = create(null);
