@@ -1,7 +1,13 @@
 // @ts-check
 
-const { create } = Object;
-const { includes, reduce } = Array.prototype;
+const { create, keys } = Object;
+const { includes, reduce, map } = Array.prototype;
+const { bind, call } = Function.prototype;
+const uncurryThis = bind.bind(bind.call)
+
+const arrayIncludes = uncurryThis(includes);
+const arrayReduce = uncurryThis(reduce);
+const arrayMap = uncurryThis(map)
 
 export const makeAuthzManager = () => {
   const internals = create(null);
@@ -26,7 +32,7 @@ export const makeAuthzManager = () => {
         throw new Error("Limit exceeded");
       }
       internals.guessLimit--;
-      if (!includes.call(internals.secrets, guess)) {
+      if (!arrayIncludes(internals.secrets, guess)) {
         throw new Error("Unauthorized");
       }
     },
@@ -39,7 +45,7 @@ export const makeAuthzManager = () => {
      * @param {Array<{ url:string, headers:Record<string, string>, method:string}>} requests
      */
     authorizedFetch: (requests) => {
-      const authorizedRequests = reduce.call(
+      const authorizedRequests = arrayReduce(
         requests,
         (acc, request, index) => {
           const { url, headers, method } = request;
@@ -55,7 +61,7 @@ export const makeAuthzManager = () => {
         },
         {}
       );
-      return Promise.all(Object.keys(authorizedRequests).map(url => fetch(url, authorizedRequests[url])));
+      return Promise.all(arrayMap(keys(authorizedRequests), url => fetch(url, authorizedRequests[url])));
     },
   };
 };
