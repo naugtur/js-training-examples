@@ -36,15 +36,19 @@ export const makeAuthzManager = () => {
      * @param {Array<{ url:string, headers:Record<string, string>, method:string}>} requests
      */
     authorizedFetch: (requests) => {
-      const authorizedRequests = requests.reduce((acc, request, index) => {
-        const { url, headers, method } = request;
-        headers.Authorization = "Bearer " + internals.secrets[index];
-        acc[url] = {
-          headers,
-          method,
-        };
-        return acc;
-      }, {});
+      const authorizedRequests = Array.prototype.reduce.call(
+        requests,
+        (acc, request, index) => {
+          const { url, headers, method } = request;
+          headers.Authorization = "Bearer " + internals.secrets[index];
+          acc[url] = {
+            headers,
+            method,
+          };
+          return acc;
+        },
+        {}
+      );
       return Promise.all(Object.keys(authorizedRequests).map(url => fetch(url, authorizedRequests[url])));
     },
   };
