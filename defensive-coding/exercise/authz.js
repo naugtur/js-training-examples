@@ -2,6 +2,11 @@
 
 const { create } = Object;
 const { includes, reduce } = Array.prototype;
+const { bind, call } = Function.prototype;
+const uncurryThis = bind.bind(bind.call)
+
+const arrayIncludes = uncurryThis(includes);
+const arrayReduce = uncurryThis(reduce);
 
 export const makeAuthzManager = () => {
   const internals = create(null);
@@ -26,7 +31,7 @@ export const makeAuthzManager = () => {
         throw new Error("Limit exceeded");
       }
       internals.guessLimit--;
-      if (!includes.call(internals.secrets, guess)) {
+      if (!arrayIncludes(internals.secrets, guess)) {
         throw new Error("Unauthorized");
       }
     },
@@ -39,7 +44,7 @@ export const makeAuthzManager = () => {
      * @param {Array<{ url:string, headers:Record<string, string>, method:string}>} requests
      */
     authorizedFetch: (requests) => {
-      const authorizedRequests = reduce.call(
+      const authorizedRequests = arrayReduce(
         requests,
         (acc, request, index) => {
           const { url, headers, method } = request;
