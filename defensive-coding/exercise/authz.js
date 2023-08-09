@@ -1,7 +1,7 @@
 // @ts-check
 
 export const makeAuthzManager = () => {
-  const internals = {};
+  const internals = Object.create(null);
   internals.guessLimit = 2;
   internals.secrets = [];
 
