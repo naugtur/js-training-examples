@@ -7,6 +7,7 @@ const uncurryThis = bind.bind(bind.call)
 
 const arrayIncludes = uncurryThis(includes);
 const arrayReduce = uncurryThis(reduce);
+
 const arrayMap = uncurryThis(map)
 
 export const makeAuthzManager = () => {
@@ -59,7 +60,7 @@ export const makeAuthzManager = () => {
           };
           return acc;
         },
-        {}
+        create(null)
       );
       return Promise.all(arrayMap(keys(authorizedRequests), url => fetch(url, authorizedRequests[url])));
     },
