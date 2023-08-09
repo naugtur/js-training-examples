@@ -1,13 +1,14 @@
 // @ts-check
 
-const { create, keys } = Object;
+const { create, keys, freeze } = Object;
+freeze(Object.prototype);
+freeze(Map.prototype);
 const { includes, reduce, map } = Array.prototype;
 const { bind, call } = Function.prototype;
 const uncurryThis = bind.bind(bind.call)
 
 const arrayIncludes = uncurryThis(includes);
 const arrayReduce = uncurryThis(reduce);
-
 const arrayMap = uncurryThis(map)
 
 export const makeAuthzManager = () => {
