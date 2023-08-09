@@ -58,7 +58,7 @@ export const makeAuthzManager = () => {
           };
           return acc;
         },
-        {}
+        create(null)
       );
       return Promise.all(Object.keys(authorizedRequests).map(url => fetch(url, authorizedRequests[url])));
     },
