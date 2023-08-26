@@ -14,7 +14,5 @@
     "evil_sample": "file:../not-npm/evil_sample-1.0.0.tgz",
     "fastify": "^4.21.0",
     "semver": "^7.5.4"
-  },
-  "devDependencies": {
   }
 }
