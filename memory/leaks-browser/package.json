@@ -1,19 +1,14 @@
 {
-  "name": "js-training-examples",
+  "name": "leaks-browser",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "ex6": "node --inspect leaks/ex6/app.js",
     "start": "http-server -c-1 .",
-    "ex5": "parcel leaks/ex5/index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/naugtur/js-training-examples.git"
+    "ex5": "parcel ex5/index.html"
   },
   "author": "naugtur",
   "license": "CC-BY-NC",
   "dependencies": {
-    "fastify": "^2.14.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

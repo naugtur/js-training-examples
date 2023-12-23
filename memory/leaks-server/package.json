@@ -1,0 +1,18 @@
+{
+  "name": "leaks-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --expose-gc ./server.js",
+    "test": "autocannon -c 100 -d 3 -p 10"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "fastify": "^4.25.1"
+  },
+  "devDependencies": {
+    "autocannon": "^7.14.0"
+  }
+}
