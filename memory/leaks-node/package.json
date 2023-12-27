@@ -5,14 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "node --expose-gc ./server.js",
-    "test": "autocannon -c 100 -d 3 -p 10"
+    "test": "autocannon -c 100 -d 3 -p 10",
+    "clean": "rm Heap.*"
   },
   "keywords": [],
   "author": "",
   "dependencies": {
-    "fastify": "^4.25.1"
+    "express": "4.15.3",
+    "express-session": "1.15.3",
+    "fastify": "4.25.2",
+    "mercurius": "13.3.3"
   },
   "devDependencies": {
-    "autocannon": "^7.14.0"
+    "autocannon": "^7.14.0",
+    "clinic": "^13.0.0"
   }
 }
