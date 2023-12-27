@@ -43,3 +43,4 @@ dist
 *.spoiler*
 Heap.*
 .clinic
+*.0x
