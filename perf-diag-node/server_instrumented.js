@@ -1,3 +1,8 @@
+const blocked = require("blocked");
+blocked((ms, stack) => {
+  console.error(`Blocked for ${ms}ms ${stack}`);
+});
+
 const { readdirSync } = require("fs");
 const problems = readdirSync("./problems").map((file) => file.split(".")[0]);
 

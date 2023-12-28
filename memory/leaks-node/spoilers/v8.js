@@ -12,3 +12,5 @@ const stream = v8.getHeapSnapshot();
 
 // node --expose-gc index.js
 // global.gc()
+
+v8.setHeapSnapshotNearHeapLimit(limit)
