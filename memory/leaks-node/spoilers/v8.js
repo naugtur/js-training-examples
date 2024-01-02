@@ -14,3 +14,10 @@ const stream = v8.getHeapSnapshot();
 // global.gc()
 
 v8.setHeapSnapshotNearHeapLimit(limit)
+
+
+// paranoid version 
+global.gc();
+await new Promise((resolve) => setTimeout(resolve, 1000));
+global.gc();
+require("v8").writeHeapSnapshot();
