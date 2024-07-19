@@ -1,7 +1,12 @@
 # CSP-exercise
 
+## Setup
 ```
 npm ci --ignore-scripts
+```
+
+## Run
+```
 npm start
 ```
 Open [http://localhost:1337/](http://localhost:1337/)
@@ -10,7 +15,9 @@ Edit headers.json only for this exercise.
 
 ## 1. Gentle rollout of CSP
 
-Without reading any code in `/public` open the main page to see how it works and then roll out a CSP without breaking anything. Iterate on the policy and look at the reports logged by the server.
+Go through the procedure of rolling out a CSP. Start with `default-src 'none'`, add reporting and then open it up based on reports
+
+Without reading any code in `/public` open the main page to see how it works and then roll out a CSP without breaking the script that displays the cat picture. Iterate on the policy and look at the reports logged by the server.
 
 ## 2. More precise CSP
 
