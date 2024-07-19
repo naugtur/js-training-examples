@@ -8,7 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h4>Imagine this page was rendered by the backend which allowed for the XSS attempts below</h4>
+    <h1>User posts</h1>
+    <p>Imagine this page was rendered by the backend which allowed for the XSS attempts below</p>
 
     <script nonce="tralala">
         alert("[good] Make this alert work with your CSP while others don't")
@@ -18,24 +19,27 @@
     </script>
 
     <p class="userPost">
+        Hello, I injected a script from my domain
         <script src="https://example.com/index.js">
         </script>
     </p>
     <p class="userPost">
+        Look at me, I can inline a script in my comment!
         <script>
             alert('pwnd by inline script')
         </script>
     </p>
     <p class="userPost">
+        This is more like what an XSS attack actually looks like
         <img src="a" alt="" onerror="alert('pwnd by more elaborate inline script')">
     </p>
     <p class="userPost">
+        What if I got the backend to reflect some code and loaded it as local script?
         <script src="/xsses.js">
         </script>
     </p>
-    <p class="userPost"></p>
+    <p class="userPost">BTW, if you want to see what attacking is like, try this game: http://www.xssgame.com</p>
 
-    <p>For some fun exploration on how to attack: http://www.xssgame.com</p>
 
 </body>
 </html>

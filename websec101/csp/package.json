@@ -2,25 +2,11 @@
   "name": "csp-exercise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "node --watch index.js",
     "datatheft": "node --watch index.js steal"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/naugtur/CSP-exercise.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/naugtur/CSP-exercise/issues"
-  },
-  "homepage": "https://github.com/naugtur/CSP-exercise#readme",
   "dependencies": {
     "express": "^4.19.2"
-  },
-  "devDependencies": {
   }
 }
