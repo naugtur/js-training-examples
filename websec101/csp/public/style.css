@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 800px;
+  padding: 20px;
+  margin:  20px auto;
+}
+div {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 10px solid #cfd 
+}
+img {
+  max-width: 100%;
+}
+form {
+  padding: 10px;
+  margin: 10px auto;
+  width: 240px;
+  border: 10px solid #cfd;
+}
+form * {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  padding: 5px;
+}
+.userPost {
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 10px solid #cfd;
+}

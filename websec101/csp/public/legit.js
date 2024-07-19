@@ -1,0 +1,1 @@
+$('div').html('<img src="https://cdn.pixabay.com/photo/2019/11/08/11/56/kitten-4611189_960_720.jpg">')
