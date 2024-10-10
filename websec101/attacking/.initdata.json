@@ -1,0 +1,8 @@
+{
+    "secret": "unsafe-secret-string-never-use-readable-dummy-strings-for-secrets",
+    "pastries": [],
+    "user": {
+        "login": "admin",
+        "password": "unsafe"
+    }
+}
