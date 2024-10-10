@@ -52,7 +52,7 @@ function App() {
     <div>
       <h1>Bakery App</h1>
       {!isLoggedIn ? (
-        <form onSubmit={handleLogin}>
+        <form className="admin" onSubmit={handleLogin}>
           <input
             type="text"
             value={username}

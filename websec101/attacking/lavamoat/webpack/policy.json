@@ -1,0 +1,64 @@
+{
+  "resources": {
+    "emoji-icon-component": {
+      "globals": {
+        "Response.prototype.json": true,
+        "console.error": true,
+        "console.log": true,
+        "fetch": true,
+        "location.origin": true
+      },
+      "packages": {
+        "react": true
+      }
+    },
+    "react": {
+      "globals": {
+        "process.env.NODE_ENV": true
+      }
+    },
+    "react-dom": {
+      "globals": {
+        "console.error": true,
+        "process.env.NODE_ENV": true,
+        "queueMicrotask": true,
+        "reportError": true,
+        "MSApp": true,
+        "__REACT_DEVTOOLS_GLOBAL_HOOK__": true,
+        "addEventListener": true,
+        "clearTimeout": true,
+        "clipboardData": true,
+        "console": true,
+        "dispatchEvent": true,
+        "document": true,
+        "event": "write",
+        "jest": true,
+        "location.protocol": true,
+        "navigator.userAgent.indexOf": true,
+        "performance": true,
+        "removeEventListener": true,
+        "self": true,
+        "setTimeout": true,
+        "top": true,
+        "trustedTypes": true,
+        "HTMLIFrameElement": true
+      },
+      "packages": {
+        "react": true,
+        "react-dom>scheduler": true
+      }
+    },
+    "react-dom>scheduler": {
+      "globals": {
+        "MessageChannel": true,
+        "clearTimeout": true,
+        "console.error": true,
+        "navigator": true,
+        "performance": true,
+        "process.env.NODE_ENV": true,
+        "setImmediate": true,
+        "setTimeout": true
+      }
+    }
+  }
+}

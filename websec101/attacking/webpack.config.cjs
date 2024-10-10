@@ -1,4 +1,6 @@
+
 const path = require('path');
+const LavaMoat = require('@lavamoat/webpack');
 
 module.exports = {
   context: __dirname,
@@ -6,6 +8,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
+  },
+  mode: 'development',
+  devtool: 'source-map',
+  optimization: {
+    minimize: false,
   },
   module: {
     rules: [
@@ -22,4 +29,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins:[
+    // new LavaMoat({
+    //   generatePolicy: false,
+    // })
+  ]
 };
+
