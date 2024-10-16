@@ -44,3 +44,5 @@ dist
 Heap.*
 .clinic
 *.0x
+
+**/poisoning-app/data.json

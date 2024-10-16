@@ -86,7 +86,7 @@ validateObjectShape(user1, userSchema);
 validateObjectShape(user2, userSchema);
 
 console.log("checking if user2 is an admin", user2.isAdmin);
-console.log("checking if user2 is an admin", user2.isAdmin);
+console.log("checking if user2 is an admin", user2.isAdmin, "wait, what?");
 console.log("checking if user2 is an admin", user2.isAdmin);
 
 sendRegularEmail(user2);

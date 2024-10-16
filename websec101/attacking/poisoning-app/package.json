@@ -20,7 +20,6 @@
     "devDependencies": {
         "@lavamoat/webpack": "^0.6.0-beta.0",
         "esbuild-loader": "^2.13.1",
-        "webpack": "^5.38.1",
         "webpack-cli": "^4.7.0"
     }
 }
