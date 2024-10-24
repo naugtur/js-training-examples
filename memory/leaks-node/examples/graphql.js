@@ -39,7 +39,7 @@ app.register(mercurius, {
   resolvers,
 });
 
-app.listen(3000, (err) => {
+app.listen({ port:3000 }, (err) => {
   if (err) {
     console.error(err);
     process.exit(1);

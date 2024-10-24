@@ -22,11 +22,7 @@ fastify.post("/problem/:id", problemHandler);
 
 fastify.get("/heap", async (request, reply) => {
   throw Error("not implemented yet");
-  // 1. Implement returning memory info
-  // 2. Implement saving a heap snapshot to disk
-  // 3. (optionally) Force Garbage Collector before taking the snapshot
-  // 4. Try writing heap snapshot on SIGUSR2
-  // 5. (optionally) Implement returning the heap snapshot as a response
+ // you work here
 });
 
 fastify.listen({

@@ -20,4 +20,4 @@ v8.setHeapSnapshotNearHeapLimit(limit)
 global.gc();
 await new Promise((resolve) => setTimeout(resolve, 1000));
 global.gc();
-require("v8").writeHeapSnapshot();
+v8.writeHeapSnapshot();

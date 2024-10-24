@@ -1,4 +1,4 @@
-const naiveCache = [];
+const leaksSoMuch = [];
 
 // Should be easy to spot
 class leakingNamedObject {
