@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --trace-gc --expose-gc ./server.js",
+    "start": "node --trace-gc --expose-gc --heapsnapshot-signal=SIGUSR2 ./server.js",
     "test": "autocannon -c 100 -d 3 -p 10",
     "clean": "rm -rf Heap*"
   },
