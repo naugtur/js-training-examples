@@ -34,14 +34,15 @@ npm start
 
 #### Triggering a leak
 
-[visit a problem URL](http://localhost:3000/problem/01)
-or heat it up with a load test
+Visit a problem URL [http://localhost:3000/problem/01](http://localhost:3000/problem/01)  
+or heat it up with a load test:
 
 ```
 npm test http://localhost:3000/problem/01
 ```
 
-It runs `autocannon`, which you should learn to use, but for now there's some settings that should work for the purpose of this exercise.
+> [!NOTE]  
+> It runs `autocannon`, which you should learn to use, but for now there's some settings that should work for the purpose of this exercise.
 
 #### Finding the leak
 
@@ -51,7 +52,7 @@ It runs `autocannon`, which you should learn to use, but for now there's some se
 
 ## Examples
 
-`./examples/` contains some examples of memory leaks in Node.js. You can run and analyze them to get a feel for what you're looking for.
+`./examples/` contains isolated examples of different memory leaks in Node.js. You can run and analyze them to get a feel for what you're looking for.
 
 `./spoilers/autocannon_gql.sh` runs the graphql sample under load and captures heap snapshots, but feel free to try to figure it out yourself first.
 
@@ -86,3 +87,10 @@ The thing nobody told you is you want to put effort into making sure the two sna
 - benchmark suspect code
 - snapshot
 - compare the two later snapshots
+
+
+## Notable, but excluded from this exercise
+
+- `--max-old-space-size=100 --heapsnapshot-near-heap-limit=3`
+- `--heap-prof`
+- [heap profiler in Clinic.js](https://clinicjs.org/heapprofiler/) - amazing tool, not a silver bullet - run `./spoilers/clinic.sh` to see why
