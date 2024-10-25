@@ -8,6 +8,9 @@ const databaseConnector = () => {
       data: ["Can't say I found anything..."],
     };
 
+    // This is some weird logic for managing callbacks that 
+    // we don't even call, but it emulates well the shenanigans 
+    // you may see in homegrown asynchronous flow management contraptions
     const prev = nextCallback;
     nextCallback = function () {
       if (called) {
@@ -18,6 +21,7 @@ const databaseConnector = () => {
       callback();
       called = true;
     };
+
     return result;
   };
 

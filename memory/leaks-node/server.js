@@ -5,8 +5,15 @@ const fastify = require("fastify")({
   logger: true,
 });
 
-fastify.get("/", async () => {
-  return "Hello, world!";
+fastify.decorateRequest("activeUsers", {});
+
+fastify.addHook("preHandler", (req, reply, done) => {
+  req.activeUsers.current = `User${Math.random().toFixed(8).substring(1)}`;
+  done();
+});
+
+fastify.get("/", async (req) => {
+  return `Hello, ${req.activeUsers.current}!`;
 });
 
 const problemHandler = async (request, reply) => {
@@ -22,7 +29,7 @@ fastify.post("/problem/:id", problemHandler);
 
 fastify.get("/heap", async (request, reply) => {
   throw Error("not implemented yet");
- // you work here
+  // you work here
 });
 
 fastify.listen({

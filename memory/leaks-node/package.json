@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --expose-gc ./server.js",
     "test": "autocannon -c 100 -d 3 -p 10",
-    "clean": "rm Heap.*"
+    "clean": "rm -rf Heap*"
   },
   "keywords": [],
   "author": "",

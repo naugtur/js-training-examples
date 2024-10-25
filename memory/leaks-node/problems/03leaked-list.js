@@ -1,14 +1,18 @@
+class DBQueryResult {
+  constructor(query, data, prev) {
+    this.query = query;
+    this.data = data;
+    this.prev = prev;
+  }
+}
+
 const databaseConnector = () => {
   const links = {
     prev: null,
   };
 
   const makeRequest = (q) => {
-    const result = {
-      query: q,
-      data: ["Can't say I found anything..."],
-      prev: links.prev,
-    };
+    const result = new DBQueryResult(q, ["This is DATA!".repeat(300)], links.prev);
     links.prev = result;
     return result;
   };
