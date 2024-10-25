@@ -41,8 +41,11 @@ dist
 .cache
 
 *.spoiler*
-Heap.*
+Heap*
 .clinic
 *.0x
 
 **/poisoning-app/data.json
+
+# one-letter temp files
+?
