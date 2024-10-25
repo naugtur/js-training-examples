@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --expose-gc ./server.js",
+    "start": "node --trace-gc --expose-gc ./server.js",
     "test": "autocannon -c 100 -d 3 -p 10",
     "clean": "rm -rf Heap*"
   },
   "keywords": [],
   "author": "",
   "dependencies": {
+    "@naugtur/memory-leak-warning": "^1.0.1",
     "express": "4.15.3",
     "express-session": "1.15.3",
     "fastify": "4.25.2",
