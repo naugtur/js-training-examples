@@ -11,7 +11,7 @@ kill -SIGUSR2 $pid
 
 sleep 3
 
-autocannon -c10 -d2 'http://localhost:3000/graphql' -m 'POST' --headers 'Content-Type: application/json' --body '{"query":"{ hello }"}'
+npx autocannon -c10 -d2 'http://localhost:3000/graphql' -m 'POST' --headers 'Content-Type: application/json' --body '{"query":"{ hello }"}'
 
 sleep 1
 
