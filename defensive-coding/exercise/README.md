@@ -37,5 +37,8 @@ If you feel more comfortable with a browser, you can serve the exercise folder f
 ```
 npx http-server -c-1
 ```
-open your favorite browser and point it to localhost on the port you get 
+open your favorite browser and point it to localhost on the port you get, most likely:
 
+```
+http://localhost:8080/.testrunner.html
+```
