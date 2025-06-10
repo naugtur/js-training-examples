@@ -4,12 +4,12 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node compartment.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ses": "^0.18.5"
+    "ses": "^1.13.0"
   }
 }
