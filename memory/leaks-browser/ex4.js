@@ -1,34 +1,46 @@
-const runBT = document.querySelector('.run')
+const runBT = document.querySelector(".run");
 
-runBT.addEventListener('click', function eventHandlerClosure1() {
-    const model1 = {
-        leak1: Array(1000000).join("lots of text1"),
-        foo: 'bar'
+class Model {
+    constructor() {
+        this.leak = Array(1000000).fill("lots of text ".repeat(100000));
     }
-    document.getElementById("wrapper")
-        .addEventListener('click', function handlerDefinedInClosure(evt) {
-            if (false) {
-                model1.foo = 'baz'
-            }
-        });
-})
+}
+class Model1 extends Model {
+  constructor() {
+    super();
+    this.foo = "is model1 leaking?";
+  }
+}
 
+class Model2 extends Model {
+  constructor() {
+    super();
+    this.foo = "is model2 leaking?";
+  }
+}
+
+function mkButton(text) {
+  const button = document.createElement("button");
+  button.textContent = text;
+  document.getElementById("wrapper").appendChild(button);
+  return button;
+}
 
 const clickHandlerOutside = function (foo) {
-    return function (evt) {
-        if (false) {
-            foo = 'baz'
-        }
-    }
+  return function clickHandlerOutside(evt) {
+    console.log(foo);
+  };
 };
 
-runBT.addEventListener('click', function eventHandlerClosure2() {
-    const model2 = {
-        leak2: Array(1000000).join("lots of text2"),
-        foo: 'bar'
-    }
-    document.getElementById("wrapper")
-        .addEventListener('click', clickHandlerOutside(model2.foo))
-})
+runBT.addEventListener("click", function eventHandlerClosure1() {
+  const model1 = new Model1();
+  const model2 = new Model2();
 
+  const runBT1 = mkButton("test1");
+  const runBT2 = mkButton("test2");
 
+  runBT1.addEventListener("click", function handlerDefinedInClosure(evt) {
+    console.log(model1.foo);
+  });
+  runBT2.addEventListener("click", clickHandlerOutside(model2.foo));
+});
