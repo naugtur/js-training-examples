@@ -1,0 +1,20 @@
+{
+  "name": "ex6",
+  "version": "1.0.0",
+  "private": true,
+  "author": "naugtur",
+  "license": "CC-BY-NC",
+  "dependencies": {
+    "@lavamoat/preinstall-always-fail": "^2.1.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@lavamoat/allow-scripts": "^3.4.3"
+  },
+  "lavamoat": {
+    "allowScripts": {
+      "@lavamoat/preinstall-always-fail": false
+    }
+  }
+}

@@ -2,20 +2,34 @@
   "name": "leaks-browser",
   "version": "1.0.0",
   "private": true,
+  "workspaces": ["ex5", "ex6"],
   "scripts": {
     "start": "http-server -c-1 .",
-    "ex5": "parcel ex5/index.html"
+    "ex5": "parcel ex5/index.html",
+    "ex6": "parcel ex6/index.html"
   },
   "author": "naugtur",
   "license": "CC-BY-NC",
   "dependencies": {
+    "@lavamoat/preinstall-always-fail": "^2.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "http-server": "^0.12.0",
-    "@babel/core": "^7.7.7",
-    "babel-preset-env": "^1.7.0",
-    "parcel": "^1.12.4"
+    "@lavamoat/allow-scripts": "^3.4.3",
+    "http-server": "^14.1.1",
+    "parcel": "^2.16.4"
+  },
+  "lavamoat": {
+    "allowScripts": {
+      "@lavamoat/preinstall-always-fail": false,
+      "parcel": false,
+      "parcel>core-js": false,
+      "parcel>deasync": true,
+      "parcel>@parcel/core>@parcel/cache>lmdb": false,
+      "parcel>@parcel/core>msgpackr>msgpackr-extract": false,
+      "parcel>@parcel/fs>@parcel/watcher": false,
+      "parcel>@parcel/package-manager>@swc/core": false
+    }
   }
 }

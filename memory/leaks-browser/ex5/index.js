@@ -1,33 +1,56 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React, { useState, useEffect } from "react";
+import { createRoot } from "react-dom/client";
 
-const SomeComponent = ((catchMeIfYouCan) => {
-    return ((catchMeIfYouCan, props) => (
-        <div className="list x">
-            {props.items.map((item, number) => {
-                const singleItem = (
-                    <div key={number} className="lookItsMe">
-                        {item.field}
-                    </div>
-                );
-                catchMeIfYouCan.push(singleItem)
-                return singleItem
-            })}
-        </div>
-    )).bind(null, catchMeIfYouCan)
-})([])
+const SingleItem = ({ item }) => {
+ 
+  const handleResize = () => {
+    console.log("resized", item.field);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, [item.field]);
+
+  return <div className="lookItsMe">{item.field}</div>;
+};
+
+const SomeComponent = ({ items }) => (
+  <div className="list x">
+    {items.map((item, number) => (
+      <SingleItem key={number} item={item} />
+    ))}
+  </div>
+);
 
 function generate() {
-    return Array(999).join(',').split(',').map(() => ({ field: Math.random().toFixed(8) }))
+  return Array(99)
+    .join(",")
+    .split(",")
+    .map(() => ({
+      field: Math.random().toFixed(2),
+      somethingToLeak: Array(1000).fill("lotsathingz".repeat(1000)),
+    }));
 }
 
-function drawEverything() {
-    const items = generate()
-    ReactDOM.render(
-        <div className="app">
-            <button onClick={drawEverything}>refresh</button>
-            <SomeComponent items={items} />
-        </div>, document.querySelector(".main"))
+function App() {
+  const [items, setItems] = useState(generate);
+  const [running, setRunning] = useState(true);
+
+  useEffect(() => {
+    if (!running) return;
+    const interval = setInterval(() => {
+      setItems(generate());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [running]);
+
+  return (
+    <div className="app">
+      <button onClick={() => setRunning(false)}>stop</button>
+      <SomeComponent items={items} />
+    </div>
+  );
 }
 
-drawEverything()
+const root = createRoot(document.querySelector(".main"));
+root.render(<App />);

@@ -39,6 +39,7 @@ jspm_packages
 .vscode
 dist
 .cache
+.parcel-cache
 
 *.spoiler*
 Heap*
